@@ -1,0 +1,37 @@
+package goposit
+
+#define GLUE(a,b) GLUE2(a,b)
+#define GLUE2(a,b) a ## b
+
+// 8 bit
+#define VEC_T Posit8x4
+#define ONE_T Posit8
+#define VWORD uint32
+#define SWORD int8
+#define UWORD uint8
+#define WIDTH 4
+#include "slowvecwrap.h"
+#undef VEC_T
+#undef ONE_T
+#undef BIGGER_T
+#undef SMALLER_T
+#undef SWORD
+#undef UWORD
+#undef WIDTH
+
+
+// 16 bit
+#define VEC_T Posit16x2
+#define ONE_T Posit16
+#define VWORD uint32
+#define SWORD int16
+#define UWORD uint16
+#define WIDTH 2
+#include "slowvecwrap.h"
+#undef VEC_T
+#undef ONE_T
+#undef BIGGER_T
+#undef SMALLER_T
+#undef SWORD
+#undef UWORD
+#undef WIDTH

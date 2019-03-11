@@ -1,0 +1,77 @@
+// gcc -E -P -x c ./slowwrap.goh > ./slowwrap_gen.go && sed -i -e 's@^/ /@//@' ./slowwrap_gen.go
+package goposit
+
+#define POSIT_T GLUE(Posit, NBITS)
+#define GLUE(a,b) GLUE2(a,b)
+#define GLUE2(a,b) a ## b
+
+#define BIGGER_T Posit16
+#define SMAX 0x7f
+#define UMAX 0xff
+#define SWORD int8
+#define UWORD uint8
+#define NBITS 8
+#define ES 0
+#include "slowwrap.h"
+#undef BIGGER_T
+#undef SMALLER_T
+#undef SMAX
+#undef UMAX
+#undef SWORD
+#undef UWORD
+#undef NBITS
+#undef ES
+
+#define BIGGER_T Posit32
+#define SMALLER_T Posit8
+#define SMAX 0x7fff
+#define UMAX 0xffff
+#define SWORD int16
+#define UWORD uint16
+#define NBITS 16
+#define ES 1
+#include "slowwrap.h"
+#undef BIGGER_T
+#undef SMALLER_T
+#undef SMAX
+#undef UMAX
+#undef SWORD
+#undef UWORD
+#undef NBITS
+#undef ES
+
+#define BIGGER_T Posit64
+#define SMALLER_T Posit16
+#define SMAX 0x7fffffff
+#define UMAX 0xffffffff
+#define SWORD int32
+#define UWORD uint32
+#define NBITS 32
+#define ES 2
+#include "slowwrap.h"
+#undef BIGGER_T
+#undef SMALLER_T
+#undef SMAX
+#undef UMAX
+#undef SWORD
+#undef UWORD
+#undef NBITS
+#undef ES
+
+#define SMALLER_T Posit32
+#define BIGGER_T Posit128
+#define SMAX 0x7fffffffffffffff
+#define UMAX 0xffffffffffffffff
+#define SWORD int64
+#define UWORD uint64
+#define NBITS 64
+#define ES 3
+#include "slowwrap.h"
+#undef BIGGER_T
+#undef SMALLER_T
+#undef SMAX
+#undef UMAX
+#undef SWORD
+#undef UWORD
+#undef NBITS
+#undef ES
