@@ -1,5 +1,7 @@
 # GoPosit
 
+Status: unmaintained - msg me cjd on mastodon.social if you want to take over
+
 Posit Math library in golang
 
 **Caution**: This is not very well tested yet, use at your own risk
