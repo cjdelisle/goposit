@@ -1,6 +1,6 @@
 # GoPosit
 
-Status: unmaintained - msg me cjd on mastodon.social if you want to take over
+Status: incomplete/unmaintained - msg me cjd on mastodon.social if you want to take over
 
 Posit Math library in golang
 
