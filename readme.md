@@ -2,6 +2,10 @@
 
 Status: incomplete/unmaintained - msg me cjd on mastodon.social if you want to take over
 
+Another posit library exists for go exists over at https://gitlab.com/amfiremage/gosit.
+Unless it is absolutely neccesary to have support for 64 bits posits or some other feature not available in that library you should use that.
+Performance is substantially greater, and it is fuzzed again the rust implementation of soft-posit.
+
 Posit Math library in golang
 
 **Caution**: This is not very well tested yet, use at your own risk
